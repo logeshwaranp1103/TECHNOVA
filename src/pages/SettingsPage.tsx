@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Save, AlertOctagon, RotateCcw, Clock, ShieldCheck, Cpu, 
-  Zap, Bell, Lock, CheckCircle2, RefreshCw, Sliders, Sparkles, AlertTriangle, CheckCircle 
+  Zap, CheckCircle2, RefreshCw, Sliders, Sparkles, AlertTriangle 
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useAppStore } from '../store/useAppStore';
@@ -83,8 +83,8 @@ export const SettingsPage: React.FC = () => {
         autoWaitlistAllocation: true,
         maintenanceMode: false,
       };
-      setFormData(examConfig);
-      updateSettings(examConfig);
+      setFormData({ ...examConfig, emergencyBroadcastActive: formData.emergencyBroadcastActive });
+      updateSettings({ ...examConfig, emergencyBroadcastActive: formData.emergencyBroadcastActive });
       toast.success('Applied "Exam Period Mode" preset (24/7 Hours, 6h Max Booking)');
     } else if (mode === 'standard') {
       const stdConfig = {
@@ -99,8 +99,8 @@ export const SettingsPage: React.FC = () => {
         autoWaitlistAllocation: true,
         maintenanceMode: false,
       };
-      setFormData(stdConfig);
-      updateSettings(stdConfig);
+      setFormData({ ...stdConfig, emergencyBroadcastActive: formData.emergencyBroadcastActive });
+      updateSettings({ ...stdConfig, emergencyBroadcastActive: formData.emergencyBroadcastActive });
       toast.success('Applied "Standard Library Operating Mode" preset');
     } else if (mode === 'strict') {
       const strictConfig = {
@@ -115,8 +115,8 @@ export const SettingsPage: React.FC = () => {
         autoWaitlistAllocation: true,
         maintenanceMode: false,
       };
-      setFormData(strictConfig);
-      updateSettings(strictConfig);
+      setFormData({ ...strictConfig, emergencyBroadcastActive: formData.emergencyBroadcastActive });
+      updateSettings({ ...strictConfig, emergencyBroadcastActive: formData.emergencyBroadcastActive });
       toast.success('Applied "Strict Access & Enforcement Mode" preset (10m Grace Period)');
     }
   };

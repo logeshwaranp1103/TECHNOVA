@@ -10,7 +10,6 @@ import { useAppStore } from '../store/useAppStore';
 import { StatCard } from '../components/ui/StatCard';
 import { Table } from '../components/ui/Table';
 import { Button } from '../components/ui/Button';
-import { Badge } from '../components/ui/Badge';
 import { Drawer } from '../components/ui/Drawer';
 import { Modal } from '../components/ui/Modal';
 import { Input } from '../components/ui/Input';

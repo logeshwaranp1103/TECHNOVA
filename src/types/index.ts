@@ -116,7 +116,7 @@ export interface Reservation {
   endTime: string;
   durationHours: number;
   status: ReservationStatus;
-  checkInStatus: 'Checked In' | 'Pending - 15m' | 'Late arrival' | 'Checked out' | 'Not checked in';
+  checkInStatus: 'Checked In' | 'Pending - 15m' | 'Late arrival' | 'Checked out' | 'Not checked in' | 'Cancelled by Student' | 'Rejected by Admin' | 'Cancelled by Mass Release';
   checkedInTime?: string;
   createdMethod: 'Self-service app' | 'QR reservation' | 'Staff created' | 'Kiosk auto';
   qrCodePayload: string;
@@ -178,6 +178,8 @@ export interface ReportItem {
   downloadUrl: string;
   recordCount: number;
   period: string;
+  status?: string;
+  summary?: string;
 }
 
 export interface SystemSettings {

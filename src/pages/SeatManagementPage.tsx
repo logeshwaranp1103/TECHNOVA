@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import type { ColumnDef } from '@tanstack/react-table';
 import { 
   Armchair, CheckCircle2, Users, Clock, ShieldAlert, Wrench, 
-  Search, Plus, Grid, List, ZoomIn, ZoomOut, Edit3, Lock, Unlock, ChevronLeft, ChevronRight, Plug, RotateCcw, User 
+  Search, Plus, Grid, List, ZoomIn, ZoomOut, Lock, Unlock, ChevronLeft, ChevronRight, Plug, RotateCcw 
 } from 'lucide-react';
 import { toast } from 'sonner';
 import type { Seat, SeatStatus } from '../types';
@@ -127,6 +127,7 @@ export const SeatManagementPage: React.FC = () => {
     }, 450);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleOpenEditModal = () => {
     if (!selectedSeat) return;
     setEditSeatForm({
@@ -636,29 +637,40 @@ export const SeatManagementPage: React.FC = () => {
             </div>
           }
           headerAction={
-            <Button
-              variant={selectedSeat.status === 'blocked' ? 'primary' : 'outline'}
-              size="sm"
-              leftIcon={
-                <span className={`inline-flex items-center justify-center transition-transform duration-300 transform ${
-                  animatingSeatId === selectedSeat.id ? 'scale-125 -rotate-12' : 'group-hover:scale-110'
-                }`}>
-                  {selectedSeat.status === 'blocked' ? (
-                    <Unlock className="w-4 h-4 text-emerald-500" />
-                  ) : (
-                    <Lock className="w-4 h-4 text-red-500" />
-                  )}
-                </span>
-              }
-              onClick={() => handleToggleBlock(selectedSeat.id, selectedSeat.status)}
-              className={`px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 transform active:scale-90 cursor-pointer shadow-xs border ${
-                animatingSeatId === selectedSeat.id
-                  ? 'ring-4 ring-brandBlue/40 scale-105 bg-blue-50/80 border-brandBlue'
-                  : 'hover:border-slate-300 hover:shadow-sm'
-              }`}
-            >
-              {selectedSeat.status === 'blocked' ? 'Unblock Seat' : 'Block Seat'}
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                leftIcon={<Plug className="w-4 h-4 text-brandBlue" />}
+                onClick={handleOpenEditModal}
+                className="px-4 py-2 text-xs font-bold rounded-xl hover:border-brandBlue hover:bg-blue-50 transition-all"
+              >
+                Edit Seat
+              </Button>
+              <Button
+                variant={selectedSeat.status === 'blocked' ? 'primary' : 'outline'}
+                size="sm"
+                leftIcon={
+                  <span className={`inline-flex items-center justify-center transition-transform duration-300 transform ${
+                    animatingSeatId === selectedSeat.id ? 'scale-125 -rotate-12' : 'group-hover:scale-110'
+                  }`}>
+                    {selectedSeat.status === 'blocked' ? (
+                      <Unlock className="w-4 h-4 text-emerald-500" />
+                    ) : (
+                      <Lock className="w-4 h-4 text-red-500" />
+                    )}
+                  </span>
+                }
+                onClick={() => handleToggleBlock(selectedSeat.id, selectedSeat.status)}
+                className={`px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 transform active:scale-90 cursor-pointer shadow-xs border ${
+                  animatingSeatId === selectedSeat.id
+                    ? 'ring-4 ring-brandBlue/40 scale-105 bg-blue-50/80 border-brandBlue'
+                    : 'hover:border-slate-300 hover:shadow-sm'
+                }`}
+              >
+                {selectedSeat.status === 'blocked' ? 'Unblock Seat' : 'Block Seat'}
+              </Button>
+            </div>
           }
         >
           <div className="space-y-6">

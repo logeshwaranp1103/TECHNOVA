@@ -150,7 +150,7 @@ export const generateStaff = (): LibraryStaff[] => {
       role,
       assignedFloor: floors[i % floors.length],
       shiftHours: i % 2 === 0 ? '08:00 - 16:00' : '14:00 - 22:00',
-      lastActive: status === 'online' ? `${(i * 3) % 20 + 1} min ago` : (status === 'offline' ? 'Yesterday' : 'On Leave'),
+      lastActive: status === 'available' ? `${(i * 3) % 20 + 1} min ago` : (status === 'restricted' ? 'Yesterday' : 'On Leave'),
       status,
       permissionsCount: role === 'Library Manager' ? 16 : (role === 'Floor Supervisor' ? 12 : 8),
       avatarUrl: `https://images.unsplash.com/photo-${1500000000000 + i}?w=100&auto=format&fit=crop&q=80`,

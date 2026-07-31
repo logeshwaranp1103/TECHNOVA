@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import type { 
-  Seat, Reservation, Student, Staff, AuditLog, ReportItem, 
+  Seat, Reservation, Student, LibraryStaff as Staff, AuditLog, ReportItem, 
   NotificationItem, AdminProfile, SystemSettings, Floor, Zone, WaitingListEntry, LogSeverity 
 } from '../types';
 import { 
@@ -413,10 +413,10 @@ export const useAppStore = create<AppState>((set, get) => ({
     const updatedReservations = state.reservations.map(r => r.id === id ? {
       ...r,
       status: 'cancelled' as const,
-      checkInStatus: 'Cancelled by Student',
+      checkInStatus: 'Cancelled by Student' as const,
       timeline: [
-        { title: 'Reservation requested', timestamp: '09:30 - Portal', detail: 'Submitted by student', status: 'done' },
-        { title: 'Reservation cancelled', timestamp: 'Just now - Student action', detail: 'Cancelled before arrival', status: 'done' }
+        { title: 'Reservation requested', timestamp: '09:30 - Portal', detail: 'Submitted by student', status: 'done' as const },
+        { title: 'Reservation cancelled', timestamp: 'Just now - Student action', detail: 'Cancelled before arrival', status: 'done' as const }
       ]
     } : r);
 
@@ -450,10 +450,10 @@ export const useAppStore = create<AppState>((set, get) => ({
     const updatedReservations = state.reservations.map(r => r.id === id ? {
       ...r,
       status: 'rejected' as const,
-      checkInStatus: 'Rejected by Admin',
+      checkInStatus: 'Rejected by Admin' as const,
       timeline: [
-        { title: 'Reservation requested', timestamp: '09:30 - Portal', detail: 'Submitted by student', status: 'done' },
-        { title: 'Reservation rejected', timestamp: 'Just now - Staff action', detail: 'Rejected by library admin', status: 'done' }
+        { title: 'Reservation requested', timestamp: '09:30 - Portal', detail: 'Submitted by student', status: 'done' as const },
+        { title: 'Reservation rejected', timestamp: 'Just now - Staff action', detail: 'Rejected by library admin', status: 'done' as const }
       ]
     } : r);
 

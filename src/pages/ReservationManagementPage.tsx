@@ -12,7 +12,6 @@ import { StatCard } from '../components/ui/StatCard';
 import { Table } from '../components/ui/Table';
 import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
-import { Card } from '../components/ui/Card';
 import { Tabs } from '../components/ui/Tabs';
 import { Modal } from '../components/ui/Modal';
 import { Drawer } from '../components/ui/Drawer';
@@ -485,7 +484,7 @@ export const ReservationManagementPage: React.FC = () => {
           </div>
         )}
 
-        {reservationViewMode === 'calendar' && (
+        {(reservationViewMode as string) === 'calendar' && (
           <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-card space-y-6">
             {/* Top Date Jump Bar */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
@@ -711,6 +710,22 @@ export const ReservationManagementPage: React.FC = () => {
               >
                 Reject
               </Button>
+
+              {(selectedRes.status === 'confirmed' || selectedRes.status === 'checked-in') && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  leftIcon={<XCircle className="w-4 h-4" />}
+                  className="col-span-2 border-red-200 text-red-600 hover:bg-red-50"
+                  onClick={() => {
+                    cancelReservation(selectedRes.id);
+                    setSelectedReservationId(null);
+                    toast.success(`Reservation ${selectedRes.id} cancelled`);
+                  }}
+                >
+                  Cancel Reservation
+                </Button>
+              )}
             </div>
           </div>
         </Drawer>

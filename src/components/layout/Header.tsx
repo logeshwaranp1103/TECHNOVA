@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { 
   Search, Bell, Calendar as CalendarIcon, ChevronRight, User, Settings, 
-  LogOut, Armchair, Users, UserCheck, Layers, CalendarCheck, ShieldAlert, FileText 
+  LogOut, Armchair, Users, UserCheck, Layers, CalendarCheck 
 } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 

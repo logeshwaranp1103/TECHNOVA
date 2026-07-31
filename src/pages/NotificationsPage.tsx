@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Send, Radio, Bell, AlertTriangle, ShieldAlert, Info, 
-  CheckCircle, Search, Filter, Megaphone, Smartphone, Mail, Globe, Trash2, CheckCheck, MessageSquare 
+  CheckCircle, Search, Megaphone, Smartphone, Mail, Globe, CheckCheck, MessageSquare 
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useAppStore } from '../store/useAppStore';
