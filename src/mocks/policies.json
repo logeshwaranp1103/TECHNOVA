@@ -1,0 +1,10 @@
+{
+  "maxReservationDurationHours": 4,
+  "checkInGracePeriodMinutes": 15,
+  "cancellationWindowMinutes": 30,
+  "noShowPenaltyThreshold": 3,
+  "maxActiveReservationsPerUser": 2,
+  "waitlistResponseWindowMinutes": 15,
+  "libraryOpenTime": "08:00",
+  "libraryCloseTime": "22:00"
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "floor-1",
+    "floorNumber": 1,
+    "name": "Ground Floor - Main Reading Hall",
+    "description": "General study area, computer stations, and quick access reference materials.",
+    "totalSeats": 30,
+    "isActive": true
+  },
+  {
+    "id": "floor-2",
+    "floorNumber": 2,
+    "name": "Second Floor - Silent Study Commons",
+    "description": "Strict silence zone with individual carrels and ergonomic recliner seats.",
+    "totalSeats": 30,
+    "isActive": true
+  },
+  {
+    "id": "floor-3",
+    "floorNumber": 3,
+    "name": "Third Floor - Collaborative Workspace",
+    "description": "Group study tables, media presentation displays, and team project desks.",
+    "totalSeats": 30,
+    "isActive": true
+  },
+  {
+    "id": "floor-4",
+    "floorNumber": 4,
+    "name": "Fourth Floor - Research & Digital Lab",
+    "description": "High-performance dual monitor workstations and specialized digital research pods.",
+    "totalSeats": 30,
+    "isActive": true
+  }
+]

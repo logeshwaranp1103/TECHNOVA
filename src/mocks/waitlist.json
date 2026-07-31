@@ -1,0 +1,28 @@
+[
+  {
+    "id": "wl-501",
+    "userId": "u-102",
+    "userName": "Sarah Chen",
+    "userCollegeId": "STU2026042",
+    "floorId": "floor-1",
+    "floorName": "Ground Floor - Main Reading Hall",
+    "date": "2026-07-31",
+    "preferredTimeSlot": "15:00 - 18:00",
+    "queuePosition": 1,
+    "joinedAt": "2026-07-31T11:30:00Z",
+    "status": "WAITING"
+  },
+  {
+    "id": "wl-502",
+    "userId": "u-101",
+    "userName": "Alex Morgan",
+    "userCollegeId": "STU2026001",
+    "floorId": "floor-4",
+    "floorName": "Fourth Floor - Research & Digital Lab",
+    "date": "2026-07-31",
+    "preferredTimeSlot": "16:00 - 19:00",
+    "queuePosition": 2,
+    "joinedAt": "2026-07-31T12:00:00Z",
+    "status": "WAITING"
+  }
+]

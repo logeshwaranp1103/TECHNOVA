@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0F172A;
+  --color-brandBlue: #2563EB;
+  --color-tealAccent: #14B8A6;
+  --color-lightBg: #F8FAFC;
+  --color-successGreen: #10B981;
+  --color-warningOrange: #F59E0B;
+  --color-errorRed: #EF4444;
+  --color-neutralGrey: #94A3B8;
+}
+
+@layer base {
+  :root {
+    --font-heading: 'Plus Jakarta Sans', 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Primary brand palette */
+    --color-navy: #0B132B;
+    --color-brand-blue: #2563EB;
+    --color-teal-accent: #0D9488;
+    --color-light-bg: #F8FAFC;
+
+    /* Semantic status colors */
+    --status-high-avail: #10B981;
+    --status-filling-fast: #F59E0B;
+    --status-almost-full: #EF4444;
+    --status-fully-booked: #B91C1C;
+    --status-blocked: #64748B;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #F8FAFC;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Glassmorphism and UI Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text-primary {
+  background: linear-gradient(135deg, #1E40AF 0%, #2563EB 50%, #0D9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-brand-bg {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 40%, #1E3A8A 100%);
+}
+
+.glow-blue {
+  box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.35);
+}
+
+.glow-teal {
+  box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.35);
+}
+
+/* Striped maintenance pattern */
+.bg-maintenance-striped {
+  background-color: #F8FAFC;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(148, 163, 184, 0.15) 8px,
+    rgba(148, 163, 184, 0.15) 16px
+  );
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Laser scan animation line */
+@keyframes laserSweep {
+  0% { top: 10%; opacity: 0.2; }
+  50% { top: 90%; opacity: 1; }
+  100% { top: 10%; opacity: 0.2; }
+}
+
+.animate-laser {
+  animation: laserSweep 2s ease-in-out infinite;
+}
+

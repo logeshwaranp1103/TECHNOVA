@@ -1,0 +1,72 @@
+[
+  {
+    "id": "u-101",
+    "collegeId": "STU2026001",
+    "name": "Alex Morgan",
+    "email": "alex.morgan@university.edu",
+    "role": "STUDENT",
+    "phone": "+1 (555) 019-2834",
+    "department": "Computer Science & AI",
+    "status": "ACTIVE",
+    "createdAt": "2025-09-01T08:00:00Z",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "u-102",
+    "collegeId": "STU2026042",
+    "name": "Sarah Chen",
+    "email": "sarah.chen@university.edu",
+    "role": "STUDENT",
+    "phone": "+1 (555) 012-9843",
+    "department": "Electrical Engineering",
+    "status": "ACTIVE",
+    "createdAt": "2025-09-01T08:00:00Z",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "u-103",
+    "collegeId": "STU2026088",
+    "name": "Marcus Vance",
+    "email": "marcus.vance@university.edu",
+    "role": "STUDENT",
+    "phone": "+1 (555) 017-8822",
+    "department": "Business Administration",
+    "status": "RESTRICTED",
+    "createdAt": "2025-09-01T08:00:00Z",
+    "restrictions": [
+      {
+        "id": "r-1",
+        "reason": "Repeated No-Show violations (3 consecutive strikes)",
+        "startDate": "2026-07-28T00:00:00Z",
+        "endDate": "2026-08-04T00:00:00Z",
+        "issuedBy": "Admin System",
+        "active": true
+      }
+    ],
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "u-201",
+    "collegeId": "STF1002",
+    "name": "Elena Rostova",
+    "email": "elena.rostova@university.edu",
+    "role": "STAFF",
+    "phone": "+1 (555) 014-4920",
+    "department": "Library Services",
+    "status": "ACTIVE",
+    "createdAt": "2024-01-15T08:00:00Z",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "u-301",
+    "collegeId": "ADM001",
+    "name": "Dr. Robert Vance",
+    "email": "robert.vance@university.edu",
+    "role": "ADMIN",
+    "phone": "+1 (555) 011-3000",
+    "department": "Campus Information Technology",
+    "status": "ACTIVE",
+    "createdAt": "2023-06-01T08:00:00Z",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80"
+  }
+]
